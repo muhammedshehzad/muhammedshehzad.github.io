@@ -4,157 +4,98 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muhammed Shehzad - Flutter Developer Portfolio</title>
-    <link href="./styles.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <style>
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
-            width: 10px;
+            width: 8px;
         }
         ::-webkit-scrollbar-track {
-            background: #1e293b;
+            background: #f1f5f9;
         }
         ::-webkit-scrollbar-thumb {
-            background: #f97316;
-            border-radius: 5px;
+            background: #3b82f6;
+            border-radius: 4px;
         }
         /* Smooth Scroll */
         html {
             scroll-behavior: smooth;
         }
-        /* Explosive Gradient Background */
-        body {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            color: #f1f5f9;
-        }
-        /* Neon Glow Effect */
-        .neon-glow {
-            box-shadow: 0 0 10px #f97316, 0 0 20px #f97316, 0 0 30px #f97316;
-        }
-        /* Bounce Animation */
-        @keyframes bounce {
+        /* Floating Animation */
+        @keyframes float {
             0%, 100% { transform: translateY(0); }
             50% { transform: translateY(-10px); }
         }
-        .bounce {
-            animation: bounce 2s infinite;
+        .float {
+            animation: float 3s ease-in-out infinite;
         }
-        /* Pulse Animation */
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-        .pulse:hover {
-            animation: pulse 0.5s ease-in-out;
-        }
-        /* Typewriter Effect */
-        .typewriter h1 {
-            overflow: hidden;
-            white-space: nowrap;
-            animation: typing 3s steps(40, end);
-        }
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-        /* Slide-in Animation */
-        .slide-in {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        .slide-in.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-        /* Progress Bar */
-        .progress-bar {
-            height: 10px;
-            background: #334155;
-            border-radius: 5px;
-            overflow: hidden;
-        }
-        .progress-bar span {
-            display: block;
-            height: 100%;
-            background: #f97316;
-            transition: width 1.5s ease-in-out;
-        }
-        /* Hover Scale Effect */
-        .scale-hover {
-            transition: transform 0.3s ease;
-        }
-        .scale-hover:hover {
-            transform: scale(1.05);
-        }
-        /* Background Blobs */
-        .blob {
+        /* Background Shapes */
+        .shape {
             position: absolute;
             border-radius: 50%;
-            filter: blur(100px);
-            opacity: 0.3;
+            filter: blur(80px);
+            opacity: 0.2;
             z-index: -1;
         }
-        .blob-1 {
+        .shape-1 {
+            width: 250px;
+            height: 250px;
+            background: #3b82f6;
+            top: 5%;
+            left: 5%;
+        }
+        .shape-2 {
             width: 300px;
             height: 300px;
             background: #f97316;
-            top: 10%;
-            left: 10%;
-        }
-        .blob-2 {
-            width: 400px;
-            height: 400px;
-            background: #3b82f6;
-            bottom: 20%;
-            right: 10%;
+            bottom: 10%;
+            right: 5%;
         }
     </style>
 </head>
-<body class="font-sans">
-    <!-- Background Blobs -->
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
+<body class="font-sans bg-gray-100 text-gray-800">
+    <!-- Background Shapes -->
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
 
     <!-- Navigation -->
-    <nav class="fixed top-0 w-full bg-gray-900/80 backdrop-blur-md z-50">
+    <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md z-50 shadow-sm">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <a href="#" class="text-3xl font-extrabold text-orange-500 neon-glow">Shehzad</a>
-            <div class="hidden md:flex space-x-8">
-                <a href="#home" class="text-white hover:text-orange-500 transition">Home</a>
-                <a href="#about" class="text-white hover:text-orange-500 transition">About</a>
-                <a href="#skills" class="text-white hover:text-orange-500 transition">Skills</a>
-                <a href="#projects" class="text-white hover:text-orange-500 transition">Projects</a>
-                <a href="#contact" class="text-white hover:text-orange-500 transition">Contact</a>
+            <a href="#" class="text-2xl font-bold text-blue-600">Shehzad</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="text-gray-600 hover:text-blue-600 transition">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-blue-600 transition">About</a>
+                <a href="#skills" class="text-gray-600 hover:text-blue-600 transition">Skills</a>
+                <a href="#projects" class="text-gray-600 hover:text-blue-600 transition">Projects</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 transition">Contact</a>
             </div>
             <button class="md:hidden focus:outline-none" onclick="toggleMenu()">
-                <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-900">
-            <a href="#home" class="block px-4 py-2 text-white hover:bg-orange-500">Home</a>
-            <a href="#about" class="block px-4 py-2 text-white hover:bg-orange-500">About</a>
-            <a href="#skills" class="block px-4 py-2 text-white hover:bg-orange-500">Skills</a>
-            <a href="#projects" class="block px-4 py-2 text-white hover:bg-orange-500">Projects</a>
-            <a href="#contact" class="block px-4 py-2 text-white hover:bg-orange-500">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+            <a href="#home" class="block px-4 py-2 text-gray-600 hover:bg-blue-50">Home</a>
+            <a href="#about" class="block px-4 py-2 text-gray-600 hover:bg-blue-50">About</a>
+            <a href="#skills" class="block px-4 py-2 text-gray-600 hover:bg-blue-50">Skills</a>
+            <a href="#projects" class="block px-4 py-2 text-gray-600 hover:bg-blue-50">Projects</a>
+            <a href="#contact" class="block px-4 py-2 text-gray-600 hover:bg-blue-50">Contact</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center pt-16 relative">
+    <section id="home" class="min-h-screen flex items-center pt-16">
         <div class="container mx-auto px-4 text-center">
-            <h1 class="typewriter text-5xl md:text-7xl font-extrabold text-white mb-4">
-                Muhammed Shehzad
-            </h1>
-            <p class="text-xl md:text-3xl text-gray-300 mb-8 bounce">
-                Junior Flutter Developer | Kozhikode, Kerala
-            </p>
+            <h1 class="text-4xl md:text-6xl font-bold text-gray-800 mb-4 animate-fade-in">Muhammed Shehzad</h1>
+            <p class="text-lg md:text-2xl text-gray-600 mb-8 float">Junior Flutter Developer | Kozhikode, Kerala</p>
             <div class="flex justify-center space-x-4">
-                <a href="https://github.com/muhammedshehzad" class="bg-orange-500 text-white px-6 py-3 rounded-lg neon-glow pulse">GitHub</a>
-                <a href="https://www.linkedin.com/in/muhammed-shehzad-573094201/" class="bg-orange-500 text-white px-6 py-3 rounded-lg neon-glow pulse">LinkedIn</a>
-                <a href="mailto:shehzadchechu7@gmail.com" class="bg-orange-500 text-white px-6 py-3 rounded-lg neon-glow pulse">Email</a>
+                <a href="https://github.com/muhammedshehzad" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition transform hover:scale-105">GitHub</a>
+                <a href="https://www.linkedin.com/in/muhammed-shehzad-573094201/" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition transform hover:scale-105">LinkedIn</a>
+                <a href="mailto:shehzadchechu7@gmail.com" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition transform hover:scale-105">Email</a>
             </div>
         </div>
     </section>
@@ -162,49 +103,61 @@
     <!-- About Section -->
     <section id="about" class="py-20">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-10 text-orange-500">About Me</h2>
-            <div class="max-w-3xl mx-auto text-center slide-in">
-                <p class="text-lg text-gray-300 leading-relaxed">
-                    I'm a dynamic Flutter developer with 2+ years of experience crafting explosive cross-platform mobile apps. Based in Kozhikode, Kerala, I thrive on building high-performance apps with vibrant UI/UX, seamless backend integrations, and clean architecture. My mission? To ignite your ideas into scalable, user-focused solutions that pop!
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-blue-600">About Me</h2>
+            <div class="max-w-3xl mx-auto text-center animate-fade-in">
+                <p class="text-lg text-gray-600 leading-relaxed">
+                    I'm a passionate Flutter developer with over 2 years of experience building dynamic, cross-platform mobile apps. Based in Kozhikode, Kerala, I specialize in creating intuitive UI/UX, integrating robust backends, and delivering scalable solutions. Let's bring your ideas to life with clean code and vibrant designs!
                 </p>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-900/50">
+    <section id="skills" class="py-20 bg-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-10 text-orange-500">Skills & Expertise</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-blue-600">Skills & Expertise</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                <div class="slide-in">
-                    <h3 class="text-lg font-semibold text-white">Flutter Development</h3>
-                    <div class="progress-bar mt-2"><span style="width: 95%"></span></div>
-                    <p class="text-gray-400 mt-2">Crafting responsive apps for Android and iOS with clean architecture.</p>
+                <div class="animate-fade-in">
+                    <h3 class="text-lg font-semibold text-gray-800">Flutter Development</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                        <div class="bg-blue-600 h-2.5 rounded-full" style="width: 95%"></div>
+                    </div>
+                    <p class="text-gray-500 mt-2">Building responsive apps for Android and iOS with clean architecture.</p>
                 </div>
-                <div class="slide-in">
-                    <h3 class="text-lg font-semibold text-white">Dart Programming</h3>
-                    <div class="progress-bar mt-2"><span style="width: 90%"></span></div>
-                    <p class="text-gray-400 mt-2">Writing efficient and scalable Dart code.</p>
+                <div class="animate-fade-in">
+                    <h3 class="text-lg font-semibold text-gray-800">Dart Programming</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                        <div class="bg-blue-600 h-2.5 rounded-full" style="width: 90%"></div>
+                    </div>
+                    <p class="text-gray-500 mt-2">Writing efficient and scalable Dart code.</p>
                 </div>
-                <div class="slide-in">
-                    <h3 class="text-lg font-semibold text-white">Firebase Integration</h3>
-                    <div class="progress-bar mt-2"><span style="width: 85%"></span></div>
-                    <p class="text-gray-400 mt-2">Mastery in Authentication, Firestore, and Cloud Functions.</p>
+                <div class="animate-fade-in">
+                    <h3 class="text-lg font-semibold text-gray-800">Firebase Integration</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                        <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+                    </div>
+                    <p class="text-gray-500 mt-2">Expertise in Authentication, Firestore, and Cloud Functions.</p>
                 </div>
-                <div class="slide-in">
-                    <h3 class="text-lg font-semibold text-white">API Integration</h3>
-                    <div class="progress-bar mt-2"><span style="width: 90%"></span></div>
-                    <p class="text-gray-400 mt-2">Seamless RESTful services with Dio and HTTP.</p>
+                <div class="animate-fade-in">
+                    <h3 class="text-lg font-semibold text-gray-800">API Integration</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                        <div class="bg-blue-600 h-2.5 rounded-full" style="width: 90%"></div>
+                    </div>
+                    <p class="text-gray-500 mt-2">Seamless RESTful services with Dio and HTTP.</p>
                 </div>
-                <div class="slide-in">
-                    <h3 class="text-lg font-semibold text-white">UI/UX Implementation</h3>
-                    <div class="progress-bar mt-2"><span style="width: 85%"></span></div>
-                    <p class="text-gray-400 mt-2">Pixel-perfect layouts from Figma with vibrant animations.</p>
+                <div class="animate-fade-in">
+                    <h3 class="text-lg font-semibold text-gray-800">UI/UX Implementation</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                        <div class="bg-blue-600 h-2.5 rounded-full" style="width: 85%"></div>
+                    </div>
+                    <p class="text-gray-500 mt-2">Pixel-perfect layouts from Figma with smooth animations.</p>
                 </div>
-                <div class="slide-in">
-                    <h3 class="text-lg font-semibold text-white">State Management</h3>
-                    <div class="progress-bar mt-2"><span style="width: 80%"></span></div>
-                    <p class="text-gray-400 mt-2">Expert in Provider, Bloc, GetX, and Riverpod.</p>
+                <div class="animate-fade-in">
+                    <h3 class="text-lg font-semibold text-gray-800">State Management</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                        <div class="bg-blue-600 h-2.5 rounded-full" style="width: 80%"></div>
+                    </div>
+                    <p class="text-gray-500 mt-2">Proficient in Provider, Bloc, GetX, and Riverpod.</p>
                 </div>
             </div>
         </div>
@@ -213,64 +166,46 @@
     <!-- Projects Section -->
     <section id="projects" class="py-20">
         <div class="container mx-auto px-4">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-10 text-orange-500">Featured Projects</h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-10 text-blue-600">Featured Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project 1 -->
-                <div class="bg-gray-800 p-6 rounded-xl neon-glow scale-hover slide-in">
-                    <h3 class="text-xl font-semibold text-white">School Management App</h3>
-                    <p class="mt-3 text-gray-400">
-                        A Flutter app for school administration with offline support using Isar and Firebase integration.
-                    </p>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition transform hover:scale-105 animate-fade-in">
+                    <h3 class="text-xl font-semibold text-gray-800">School Management App</h3>
+                    <p class="mt-3 text-gray-600">A Flutter app for school administration with offline support using Isar and Firebase integration.</p>
                     <div class="mt-4">
-                        <a href="https://github.com/muhammedshehzad/School-Management-Application-New" class="text-orange-500 hover:underline">View on GitHub</a>
+                        <a href="https://github.com/muhammedshehzad/School-Management-Application-New" class="text-blue-600 hover:underline">View on GitHub</a>
                     </div>
                 </div>
-                <!-- Project 2 -->
-                <div class="bg-gray-800 p-6 rounded-xl neon-glow scale-hover slide-in">
-                    <h3 class="text-xl font-semibold text-white">Van Sale Application</h3>
-                    <p class="mt-3 text-gray-400">
-                        Real-time sales and inventory tracking app with Firebase and REST API integration.
-                    </p>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition transform hover:scale-105 animate-fade-in">
+                    <h3 class="text-xl font-semibold text-gray-800">Van Sale Application</h3>
+                    <p class="mt-3 text-gray-600">Real-time sales and inventory tracking app with Firebase and REST API integration.</p>
                     <div class="mt-4">
-                        <a href="https://github.com/muhammedshehzad/van_sale" class="text-orange-500 hover:underline">View on GitHub</a>
+                        <a href="https://github.com/muhammedshehzad/van_sale" class="text-blue-600 hover:underline">View on GitHub</a>
                     </div>
                 </div>
-                <!-- Project 3 -->
-                <div class="bg-gray-800 p-6 rounded-xl neon-glow scale-hover slide-in">
-                    <h3 class="text-xl font-semibold text-white">PMJ</h3>
-                    <p class="mt-3 text-gray-400">
-                        Elegant UI Flutter app with Firebase backend and Hive local storage.
-                    </p>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition transform hover:scale-105 animate-fade-in">
+                    <h3 class="text-xl font-semibold text-gray-800">PMJ</h3>
+                    <p class="mt-3 text-gray-600">Elegant UI Flutter app with Firebase backend and Hive local storage.</p>
                     <div class="mt-4">
-                        <a href="https://github.com/muhammedshehzad/pmj" class="text-orange-500 hover:underline">View on GitHub</a>
+                        <a href="https://github.com/muhammedshehzad/pmj" class="text-blue-600 hover:underline">View on GitHub</a>
                     </div>
                 </div>
-                <!-- Project 4 -->
-                <div class="bg-gray-800 p-6 rounded-xl neon-glow scale-hover slide-in">
-                    <h3 class="text-xl font-semibold text-white">E-Commerce App</h3>
-                    <p class="mt-3 text-gray-400">
-                        Full-featured e-commerce app with product catalog, cart, and Stripe payments.
-                    </p>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition transform hover:scale-105 animate-fade-in">
+                    <h3 class="text-xl font-semibold text-gray-800">E-Commerce App</h3>
+                    <p class="mt-3 text-gray-600">Full-featured e-commerce app with product catalog, cart, and Stripe payments.</p>
                     <div class="mt-4">
                         <span class="text-gray-500">Private Repository</span>
                     </div>
                 </div>
-                <!-- Project 5 -->
-                <div class="bg-gray-800 p-6 rounded-xl neon-glow scale-hover slide-in">
-                    <h3 class="text-xl font-semibold text-white">Food Delivery App</h3>
-                    <p class="mt-3 text-gray-400">
-                        Feature-rich food delivery app with real-time order tracking and Maps API.
-                    </p>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition transform hover:scale-105 animate-fade-in">
+                    <h3 class="text-xl font-semibold text-gray-800">Food Delivery App</h3>
+                    <p class="mt-3 text-gray-600">Feature-rich food delivery app with real-time order tracking and Maps API.</p>
                     <div class="mt-4">
                         <span class="text-gray-500">Private Repository</span>
                     </div>
                 </div>
-                <!-- Project 6 -->
-                <div class="bg-gray-800 p-6 rounded-xl neon-glow scale-hover slide-in">
-                    <h3 class="text-xl font-semibold text-white">Real-time Chat App</h3>
-                    <p class="mt-3 text-gray-400">
-                        Messaging app with real-time chat, media sharing, and Firebase notifications.
-                    </p>
+                <div class="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition transform hover:scale-105 animate-fade-in">
+                    <h3 class="text-xl font-semibold text-gray-800">Real-time Chat App</h3>
+                    <p class="mt-3 text-gray-600">Messaging app with real-time chat, media sharing, and Firebase notifications.</p>
                     <div class="mt-4">
                         <span class="text-gray-500">Private Repository</span>
                     </div>
@@ -280,65 +215,73 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-900/50">
+    <section id="contact" class="py-20 bg-white">
         <div class="container mx-auto px-4 text-center">
-            <h2 class="text-4xl md:text-5xl font-bold mb-10 text-orange-500">Get in Touch</h2>
-            <p class="text-lg text-gray-300 max-w-xl mx-auto mb-8">
-                Ready to spark a project or collaborate? I'm in Kozhikode, Kerala, and eager to turn your vision into reality!
+            <h2 class="text-3xl md:text-4xl font-bold mb-10 text-blue-600">Get in Touch</h2>
+            <p class="text-lg text-gray-600 max-w-xl mx-auto mb-8">
+                Ready to collaborate or start a project? I'm based in Kozhikode, Kerala, and excited to turn your vision into reality!
             </p>
-            <div class="max-w-md mx-auto slide-in">
-                <div class="mb-4">
-                    <input type="text" placeholder="Name" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-orange-500">
-                </div>
-                <div class="mb-4">
-                    <input type="email" placeholder="Email" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-orange-500">
-                </div>
-                <div class="mb-4">
-                    <textarea placeholder="Message" rows="4" class="w-full p-3 rounded-lg bg-gray-800 border border-gray-600 text-white focus:outline-none focus:ring-2 focus:ring-orange-500"></textarea>
-                </div>
-                <button onclick="submitForm()" class="bg-orange-500 text-white px-8 py-3 rounded-lg neon-glow pulse">
-                    Send Message
-                </button>
+            <div class="max-w-md mx-auto animate-fade-in">
+                <form id="contact-form">
+                    <div class="mb-4">
+                        <input type="text" id="name" placeholder="Name" class="w-full p-3 rounded-lg bg-gray-100 border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                    </div>
+                    <div class="mb-4">
+                        <input type="email" id="email" placeholder="Email" class="w-full p-3 rounded-lg bg-gray-100 border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-600" required>
+                    </div>
+                    <div class="mb-4">
+                        <textarea id="message" placeholder="Message" rows="4" class="w-full p-3 rounded-lg bg-gray-100 border border-gray-300 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-600" required></textarea>
+                    </div>
+                    <button type="submit" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition transform hover:scale-105">Send Message</button>
+                </form>
             </div>
-            <div class="mt-8 text-gray-300">
-                <p>Email: <a href="mailto:shehzadchechu7@gmail.com" class="text-orange-500 hover:underline">shehzadchechu7@gmail.com</a></p>
-                <p>Phone: <a href="tel:+918086168455" class="text-orange-500 hover:underline">+91 8086168455</a></p>
+            <div class="mt-8 text-gray-600">
+                <p>Email: <a href="mailto:shehzadchechu7@gmail.com" class="text-blue-600 hover:underline">shehzadchechu7@gmail.com</a></p>
+                <p>Phone: <a href="tel:+918086168455" class="text-blue-600 hover:underline">+91 8086168455</a></p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 py-8">
+    <footer class="bg-gray-800 py-8">
         <div class="container mx-auto px-4 text-center text-gray-400">
             <p>© 2025 Muhammed Shehzad. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- Back to Top Button -->
-    <button id="back-to-top" class="fixed bottom-8 right-8 bg-orange-500 text-white p-3 rounded-full neon-glow pulse hidden">
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition transform hover:scale-105 hidden">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
         </svg>
     </button>
 
     <script>
+        // Initialize EmailJS (replace with your EmailJS user ID)
+        emailjs.init("YOUR_EMAILJS_USER_ID");
+
         // Mobile Menu Toggle
         function toggleMenu() {
             const menu = document.getElementById('mobile-menu');
             menu.classList.toggle('hidden');
         }
 
-        // Slide-in Animation on Scroll
-        const slideIns = document.querySelectorAll('.slide-in');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        gsap.utils.toArray('.animate-fade-in').forEach(element => {
+            gsap.from(element, {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: element,
+                    start: 'top 80%',
+                    end: 'bottom 20%',
+                    toggleActions: 'play none none none'
                 }
             });
-        }, { threshold: 0.1 });
-
-        slideIns.forEach(element => observer.observe(element));
+        });
 
         // Back to Top Button
         const backToTop = document.getElementById('back-to-top');
@@ -354,10 +297,25 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
 
-        // Contact Form Submission
-        function submitForm() {
-            alert('Message sent! I’ll get back to you soon.');
-        }
+        // Contact Form Submission with EmailJS
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const templateParams = {
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+
+            emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', templateParams)
+                .then(() => {
+                    alert('Message sent successfully! I’ll get back to you soon.');
+                    document.getElementById('contact-form').reset();
+                }, (error) => {
+                    alert('Failed to send message. Please try again later.');
+                    console.error('EmailJS error:', error);
+                });
+        });
     </script>
 </body>
 </html>
