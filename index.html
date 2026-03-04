@@ -532,6 +532,7 @@
     /* ─── FADE IN ──────────────────────────────────────── */
     .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .fade-in.visible { opacity: 1; transform: none; }
+    #home .fade-in { opacity: 1; transform: none; }
 
     /* ─── MOBILE ───────────────────────────────────────── */
     @media (max-width: 900px) {
@@ -974,14 +975,26 @@
     });
   });
 
-  // ── Fade-in observer
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('visible'); obs.unobserve(en.target); }});
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
-
-  // Trigger hero immediately
-  document.querySelectorAll('#home .fade-in').forEach(el => el.classList.add('visible'));
+  // ── Fade-in: show hero immediately, animate rest on scroll
+  function initFade() {
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (en.isIntersecting) { en.target.classList.add('visible'); obs.unobserve(en.target); }
+      });
+    }, { threshold: 0.05 });
+    document.querySelectorAll('.fade-in').forEach(el => {
+      if (el.closest('#home')) {
+        el.classList.add('visible');
+      } else {
+        obs.observe(el);
+      }
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initFade);
+  } else {
+    initFade();
+  }
 
   // ── Skill bars
   const barObs = new IntersectionObserver(entries => {
