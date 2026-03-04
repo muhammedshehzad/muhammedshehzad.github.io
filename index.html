@@ -1,22 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Muhammed Shehzad — Flutter Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --black: #0d0d0d;
@@ -29,9 +20,7 @@
       --sans: 'DM Sans', sans-serif;
     }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       font-family: var(--sans);
@@ -44,20 +33,13 @@
 
     /* ─── NAV ──────────────────────────────────────────── */
     nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
       padding: 1.25rem 5%;
       background: rgba(247, 245, 240, 0.88);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--border);
     }
-
     .nav-logo {
       font-family: var(--serif);
       font-size: 1.25rem;
@@ -65,13 +47,7 @@
       text-decoration: none;
       letter-spacing: -0.01em;
     }
-
-    .nav-links {
-      display: flex;
-      gap: 2.5rem;
-      list-style: none;
-    }
-
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
     .nav-links a {
       font-size: 0.85rem;
       font-weight: 500;
@@ -81,11 +57,7 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-
-    .nav-links a:hover {
-      color: var(--black);
-    }
-
+    .nav-links a:hover { color: var(--black); }
     .nav-cta {
       font-size: 0.8rem;
       font-weight: 500;
@@ -98,26 +70,10 @@
       text-decoration: none;
       transition: all 0.2s;
     }
+    .nav-cta:hover { background: var(--black); color: var(--white); }
 
-    .nav-cta:hover {
-      background: var(--black);
-      color: var(--white);
-    }
-
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-    }
-
-    .hamburger span {
-      width: 22px;
-      height: 1.5px;
-      background: var(--black);
-      display: block;
-      transition: all 0.3s;
-    }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 22px; height: 1.5px; background: var(--black); display: block; transition: all 0.3s; }
 
     /* ─── HERO ─────────────────────────────────────────── */
     #home {
@@ -127,7 +83,6 @@
       padding: 10rem 5% 6rem;
       border-bottom: 1px solid var(--border);
     }
-
     .hero-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -137,7 +92,6 @@
       max-width: 1200px;
       margin: 0 auto;
     }
-
     .hero-eyebrow {
       font-size: 0.78rem;
       font-weight: 500;
@@ -146,7 +100,6 @@
       color: var(--accent);
       margin-bottom: 1rem;
     }
-
     .hero-title {
       font-family: var(--serif);
       font-size: clamp(2.8rem, 5vw, 4.5rem);
@@ -155,12 +108,7 @@
       color: var(--black);
       margin-bottom: 1.5rem;
     }
-
-    .hero-title em {
-      font-style: italic;
-      color: var(--accent);
-    }
-
+    .hero-title em { font-style: italic; color: var(--accent); }
     .hero-desc {
       font-size: 1rem;
       color: #555;
@@ -168,13 +116,7 @@
       margin-bottom: 2.5rem;
       line-height: 1.8;
     }
-
-    .hero-actions {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
     .btn-primary {
       padding: 0.75rem 2rem;
       background: var(--black);
@@ -186,11 +128,7 @@
       letter-spacing: 0.04em;
       transition: opacity 0.2s;
     }
-
-    .btn-primary:hover {
-      opacity: 0.75;
-    }
-
+    .btn-primary:hover { opacity: 0.75; }
     .btn-outline {
       padding: 0.75rem 2rem;
       border: 1.5px solid var(--black);
@@ -202,23 +140,17 @@
       letter-spacing: 0.04em;
       transition: all 0.2s;
     }
-
-    .btn-outline:hover {
-      background: var(--black);
-      color: var(--white);
-    }
+    .btn-outline:hover { background: var(--black); color: var(--white); }
 
     .hero-photo {
       display: flex;
       justify-content: center;
     }
-
     .hero-photo-frame {
       position: relative;
       width: 360px;
       height: 420px;
     }
-
     .hero-photo-frame::before {
       content: '';
       position: absolute;
@@ -227,24 +159,16 @@
       border-radius: 2px;
       z-index: 0;
     }
-
     .hero-photo-frame img {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      height: 100%;
+      position: relative; z-index: 1;
+      width: 100%; height: 100%;
       object-fit: cover;
       border-radius: 2px;
       filter: grayscale(20%);
     }
-
     .hero-social {
-      display: flex;
-      gap: 1.2rem;
-      margin-top: 2rem;
-      align-items: center;
+      display: flex; gap: 1.2rem; margin-top: 2rem; align-items: center;
     }
-
     .hero-social a {
       color: var(--muted);
       text-decoration: none;
@@ -255,28 +179,12 @@
       border-bottom: 1px solid transparent;
       transition: all 0.2s;
     }
-
-    .hero-social a:hover {
-      color: var(--black);
-      border-color: var(--black);
-    }
-
-    .divider {
-      width: 1px;
-      height: 14px;
-      background: var(--border);
-    }
+    .hero-social a:hover { color: var(--black); border-color: var(--black); }
+    .divider { width: 1px; height: 14px; background: var(--border); }
 
     /* ─── SECTION SHELL ────────────────────────────────── */
-    section {
-      padding: 6rem 5%;
-    }
-
-    .section-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
+    section { padding: 6rem 5%; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
     .section-label {
       font-size: 0.72rem;
       font-weight: 500;
@@ -285,7 +193,6 @@
       color: var(--accent);
       margin-bottom: 0.75rem;
     }
-
     .section-title {
       font-family: var(--serif);
       font-size: clamp(1.8rem, 3vw, 2.6rem);
@@ -293,33 +200,21 @@
       line-height: 1.15;
       margin-bottom: 1.5rem;
     }
-
     .section-line {
-      width: 40px;
-      height: 2px;
+      width: 40px; height: 2px;
       background: var(--black);
       margin-bottom: 3rem;
     }
 
     /* ─── ABOUT ────────────────────────────────────────── */
-    #about {
-      background: #fff;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
+    #about { background: #fff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 2fr;
       gap: 5rem;
       align-items: start;
     }
-
-    .about-left {
-      position: sticky;
-      top: 6rem;
-    }
-
+    .about-left { position: sticky; top: 6rem; }
     .about-photo {
       width: 100%;
       aspect-ratio: 3/4;
@@ -328,31 +223,10 @@
       filter: grayscale(15%);
       margin-bottom: 1.5rem;
     }
-
-    .about-info {
-      font-size: 0.82rem;
-      color: var(--muted);
-      line-height: 2;
-    }
-
-    .about-info strong {
-      color: var(--black);
-      font-weight: 500;
-    }
-
-    .about-text p {
-      color: #444;
-      margin-bottom: 1.25rem;
-      line-height: 1.85;
-    }
-
-    .about-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-top: 2rem;
-    }
-
+    .about-info { font-size: 0.82rem; color: var(--muted); line-height: 2; }
+    .about-info strong { color: var(--black); font-weight: 500; }
+    .about-text p { color: #444; margin-bottom: 1.25rem; line-height: 1.85; }
+    .about-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
     .tag {
       font-size: 0.75rem;
       font-weight: 500;
@@ -365,10 +239,7 @@
     }
 
     /* ─── SKILLS ───────────────────────────────────────── */
-    #skills {
-      background: var(--white);
-    }
-
+    #skills { background: var(--white); }
     .skills-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -378,23 +249,17 @@
       overflow: hidden;
       background: var(--border);
     }
-
     .skill-cell {
       padding: 2.5rem 2rem;
       background: var(--white);
       transition: background 0.2s;
     }
-
-    .skill-cell:hover {
-      background: #fff;
-    }
-
+    .skill-cell:hover { background: #fff; }
     .skill-name {
       font-family: var(--serif);
       font-size: 1.15rem;
       margin-bottom: 0.4rem;
     }
-
     .skill-level {
       font-size: 0.72rem;
       font-weight: 500;
@@ -403,14 +268,12 @@
       color: var(--accent);
       margin-bottom: 1rem;
     }
-
     .skill-bar {
       height: 2px;
       background: var(--border);
       border-radius: 2px;
       overflow: hidden;
     }
-
     .skill-fill {
       height: 100%;
       background: var(--black);
@@ -418,12 +281,7 @@
       width: 0;
       transition: width 1.4s cubic-bezier(0.16, 1, 0.3, 1);
     }
-
-    .skill-desc {
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-top: 0.75rem;
-    }
+    .skill-desc { font-size: 0.82rem; color: var(--muted); margin-top: 0.75rem; }
 
     /* Tech stack row */
     .tech-row {
@@ -432,7 +290,6 @@
       gap: 0.6rem;
       margin-top: 3.5rem;
     }
-
     .tech-chip {
       font-size: 0.78rem;
       font-weight: 500;
@@ -445,17 +302,8 @@
     }
 
     /* ─── EXPERIENCE ───────────────────────────────────── */
-    #experience {
-      background: #fff;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .exp-list {
-      display: flex;
-      flex-direction: column;
-    }
-
+    #experience { background: #fff; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+    .exp-list { display: flex; flex-direction: column; }
     .exp-item {
       display: grid;
       grid-template-columns: 200px 1fr;
@@ -463,21 +311,9 @@
       padding: 3rem 0;
       border-bottom: 1px solid var(--border);
     }
-
-    .exp-item:first-child {
-      padding-top: 0;
-    }
-
-    .exp-item:last-child {
-      border-bottom: none;
-    }
-
-    .exp-meta {
-      font-size: 0.8rem;
-      color: var(--muted);
-      padding-top: 0.2rem;
-    }
-
+    .exp-item:first-child { padding-top: 0; }
+    .exp-item:last-child { border-bottom: none; }
+    .exp-meta { font-size: 0.8rem; color: var(--muted); padding-top: 0.2rem; }
     .exp-meta .period {
       font-size: 0.75rem;
       font-weight: 500;
@@ -485,41 +321,21 @@
       color: var(--accent);
       margin-bottom: 0.4rem;
     }
-
     .exp-role {
       font-family: var(--serif);
       font-size: 1.3rem;
       margin-bottom: 0.3rem;
       line-height: 1.2;
     }
-
-    .exp-company {
-      font-size: 0.82rem;
-      color: var(--muted);
-      margin-bottom: 1rem;
-    }
-
-    .exp-desc {
-      font-size: 0.9rem;
-      color: #555;
-      line-height: 1.8;
-      margin-bottom: 1.25rem;
-    }
-
-    .exp-bullets {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
+    .exp-company { font-size: 0.82rem; color: var(--muted); margin-bottom: 1rem; }
+    .exp-desc { font-size: 0.9rem; color: #555; line-height: 1.8; margin-bottom: 1.25rem; }
+    .exp-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
     .exp-bullets li {
       font-size: 0.85rem;
       color: #666;
       padding-left: 1rem;
       position: relative;
     }
-
     .exp-bullets li::before {
       content: '—';
       position: absolute;
@@ -530,10 +346,7 @@
     }
 
     /* ─── PROJECTS ─────────────────────────────────────── */
-    #projects {
-      background: var(--white);
-    }
-
+    #projects { background: var(--white); }
     .projects-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -543,7 +356,6 @@
       overflow: hidden;
       background: var(--border);
     }
-
     .proj-card {
       background: var(--white);
       padding: 2.5rem 2.5rem;
@@ -552,11 +364,7 @@
       gap: 1rem;
       transition: background 0.2s;
     }
-
-    .proj-card:hover {
-      background: #fff;
-    }
-
+    .proj-card:hover { background: #fff; }
     .proj-num {
       font-size: 0.7rem;
       font-weight: 500;
@@ -564,25 +372,13 @@
       text-transform: uppercase;
       color: var(--muted);
     }
-
     .proj-title {
       font-family: var(--serif);
       font-size: 1.4rem;
       line-height: 1.2;
     }
-
-    .proj-desc {
-      font-size: 0.875rem;
-      color: #555;
-      line-height: 1.75;
-    }
-
-    .proj-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-    }
-
+    .proj-desc { font-size: 0.875rem; color: #555; line-height: 1.75; }
+    .proj-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; }
     .proj-tag {
       font-size: 0.7rem;
       font-weight: 500;
@@ -593,7 +389,6 @@
       border-radius: 2rem;
       color: var(--muted);
     }
-
     .proj-link {
       margin-top: auto;
       display: inline-flex;
@@ -609,18 +404,9 @@
       transition: border-color 0.2s;
       align-self: flex-start;
     }
-
-    .proj-link:hover {
-      border-color: var(--accent);
-    }
-
-    .proj-link svg {
-      transition: transform 0.2s;
-    }
-
-    .proj-link:hover svg {
-      transform: translate(3px, -3px);
-    }
+    .proj-link:hover { border-color: var(--accent); }
+    .proj-link svg { transition: transform 0.2s; }
+    .proj-link:hover svg { transform: translate(3px, -3px); }
 
     /* ─── CONTACT ──────────────────────────────────────── */
     #contact {
@@ -628,46 +414,27 @@
       color: var(--white);
       border-top: none;
     }
-
-    #contact .section-label {
-      color: #6a8aff;
-    }
-
-    #contact .section-title {
-      color: var(--white);
-    }
-
-    #contact .section-line {
-      background: #fff;
-      opacity: 0.2;
-    }
-
+    #contact .section-label { color: #6a8aff; }
+    #contact .section-title { color: var(--white); }
+    #contact .section-line { background: #fff; opacity: 0.2; }
     .contact-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 5rem;
       align-items: start;
     }
-
     .contact-intro {
       font-size: 1rem;
       color: #aaa;
       line-height: 1.85;
       margin-bottom: 3rem;
     }
-
-    .contact-info {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-    }
-
+    .contact-info { display: flex; flex-direction: column; gap: 1.5rem; }
     .contact-row {
       display: flex;
       flex-direction: column;
       gap: 0.2rem;
     }
-
     .contact-row-label {
       font-size: 0.7rem;
       font-weight: 500;
@@ -675,33 +442,15 @@
       text-transform: uppercase;
       color: #666;
     }
-
-    .contact-row a,
-    .contact-row span {
+    .contact-row a, .contact-row span {
       font-size: 0.95rem;
       color: var(--white);
       text-decoration: none;
       transition: color 0.2s;
     }
-
-    .contact-row a:hover {
-      color: #6a8aff;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .form-group label {
-      font-size: 0.72rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: #666;
-    }
-
+    .contact-row a:hover { color: #6a8aff; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1.5rem; }
+    .form-group label { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: #666; }
     .form-group input,
     .form-group textarea {
       background: transparent;
@@ -715,17 +464,10 @@
       transition: border-color 0.2s;
       resize: none;
     }
-
     .form-group input:focus,
-    .form-group textarea:focus {
-      border-color: #6a8aff;
-    }
-
+    .form-group textarea:focus { border-color: #6a8aff; }
     .form-group input::placeholder,
-    .form-group textarea::placeholder {
-      color: #444;
-    }
-
+    .form-group textarea::placeholder { color: #444; }
     .btn-send {
       width: 100%;
       padding: 1rem;
@@ -742,10 +484,7 @@
       transition: opacity 0.2s;
       margin-top: 0.5rem;
     }
-
-    .btn-send:hover {
-      opacity: 0.8;
-    }
+    .btn-send:hover { opacity: 0.8; }
 
     /* ─── FOOTER ───────────────────────────────────────── */
     footer {
@@ -753,7 +492,6 @@
       border-top: 1px solid #1c1c1c;
       padding: 2rem 5%;
     }
-
     .footer-inner {
       max-width: 1200px;
       margin: 0 auto;
@@ -762,17 +500,8 @@
       align-items: center;
       gap: 1rem;
     }
-
-    .footer-copy {
-      font-size: 0.78rem;
-      color: #444;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 2rem;
-    }
-
+    .footer-copy { font-size: 0.78rem; color: #444; }
+    .footer-links { display: flex; gap: 2rem; }
     .footer-links a {
       font-size: 0.78rem;
       color: #444;
@@ -780,76 +509,39 @@
       letter-spacing: 0.05em;
       transition: color 0.2s;
     }
-
-    .footer-links a:hover {
-      color: #fff;
-    }
+    .footer-links a:hover { color: #fff; }
 
     /* ─── BACK TO TOP ──────────────────────────────────── */
     #btt {
-      position: fixed;
-      bottom: 2rem;
-      right: 2rem;
-      width: 44px;
-      height: 44px;
+      position: fixed; bottom: 2rem; right: 2rem;
+      width: 44px; height: 44px;
       border-radius: 50%;
       background: var(--black);
       color: var(--white);
       border: 1px solid #333;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       cursor: pointer;
-      opacity: 0;
-      transform: translateY(10px);
+      opacity: 0; transform: translateY(10px);
       transition: all 0.3s;
       z-index: 90;
       text-decoration: none;
     }
-
-    #btt.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    #btt:hover {
-      background: #1a1a1a;
-    }
+    #btt.visible { opacity: 1; transform: translateY(0); }
+    #btt:hover { background: #1a1a1a; }
 
     /* ─── FADE IN ──────────────────────────────────────── */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .fade-in.visible {
-      opacity: 1;
-      transform: none;
-    }
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: none; }
 
     /* ─── MOBILE ───────────────────────────────────────── */
     @media (max-width: 900px) {
-      nav {
-        padding: 1rem 5%;
-      }
-
-      .nav-links,
-      .nav-cta {
-        display: none;
-      }
-
-      .hamburger {
-        display: flex;
-      }
+      nav { padding: 1rem 5%; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
 
       .mobile-menu {
         display: none;
-        position: fixed;
-        top: 58px;
-        left: 0;
-        right: 0;
-        bottom: 0;
+        position: fixed; top: 58px; left: 0; right: 0; bottom: 0;
         background: var(--white);
         z-index: 99;
         flex-direction: column;
@@ -857,11 +549,7 @@
         justify-content: center;
         gap: 2.5rem;
       }
-
-      .mobile-menu.open {
-        display: flex;
-      }
-
+      .mobile-menu.open { display: flex; }
       .mobile-menu a {
         font-family: var(--serif);
         font-size: 2rem;
@@ -869,265 +557,204 @@
         text-decoration: none;
       }
 
-      #home {
-        padding: 8rem 5% 5rem;
-      }
+      #home { padding: 8rem 5% 5rem; }
+      .hero-inner { grid-template-columns: 1fr; gap: 3rem; }
+      .hero-photo { order: -1; }
+      .hero-photo-frame { width: 260px; height: 300px; }
 
-      .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
+      .about-grid { grid-template-columns: 1fr; }
+      .about-left { position: static; }
+      .about-photo { width: 200px; aspect-ratio: 1; border-radius: 50%; }
 
-      .hero-photo {
-        order: -1;
-      }
-
-      .hero-photo-frame {
-        width: 260px;
-        height: 300px;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-left {
-        position: static;
-      }
-
-      .about-photo {
-        width: 200px;
-        aspect-ratio: 1;
-        border-radius: 50%;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .exp-item {
-        grid-template-columns: 1fr;
-        gap: 0.75rem;
-      }
-
-      .exp-meta .period {
-        margin-bottom: 0;
-      }
-
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        text-align: center;
-      }
+      .skills-grid { grid-template-columns: 1fr 1fr; }
+      .exp-item { grid-template-columns: 1fr; gap: 0.75rem; }
+      .exp-meta .period { margin-bottom: 0; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .footer-inner { flex-direction: column; text-align: center; }
     }
 
     @media (max-width: 600px) {
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
+      .skills-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
-
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <a href="#home" class="nav-logo">Shehzad</a>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#projects">Projects</a></li>
-    </ul>
-    <a href="#contact" class="nav-cta">Contact</a>
-    <div class="hamburger" id="ham" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </div>
-  </nav>
-
-  <!-- MOBILE MENU -->
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#experience">Experience</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+<!-- NAV -->
+<nav>
+  <a href="#home" class="nav-logo">Shehzad</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Contact</a>
+  <div class="hamburger" id="ham" aria-label="Menu">
+    <span></span><span></span><span></span>
   </div>
+</nav>
 
-  <!-- HERO -->
-  <section id="home">
-    <div class="hero-inner section-inner">
-      <div class="fade-in">
-        <p class="hero-eyebrow">Flutter Developer · Kozhikode, Kerala</p>
-        <h1 class="hero-title">Muhammed<br><em>Shehzad</em></h1>
-        <p class="hero-desc">
-          Building polished, cross-platform mobile experiences with Flutter. I care about clean architecture, thoughtful
-          UI, and code that scales.
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#experience">Experience</a>
+  <a href="#projects">Projects</a>
+  <a href="#contact">Contact</a>
+</div>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-inner section-inner">
+    <div class="fade-in">
+      <p class="hero-eyebrow">Flutter Developer · Kozhikode, Kerala</p>
+      <h1 class="hero-title">Muhammed<br><em>Shehzad</em></h1>
+      <p class="hero-desc">
+        Building polished, cross-platform mobile experiences with Flutter. I care about clean architecture, thoughtful UI, and code that scales.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">View Work</a>
+        <a href="#contact" class="btn-outline">Get in Touch</a>
+      </div>
+      <div class="hero-social">
+        <a href="https://github.com/muhammedshehzad" target="_blank">GitHub</a>
+        <div class="divider"></div>
+        <a href="https://www.linkedin.com/in/muhammed-shehzad-573094201/" target="_blank">LinkedIn</a>
+        <div class="divider"></div>
+        <a href="/cdn-cgi/l/email-protection#83f0ebe6ebf9e2e7e0ebe6e0ebf6b4c3e4eee2eaefade0ecee">Email</a>
+      </div>
+    </div>
+    <div class="hero-photo fade-in" style="transition-delay: 0.15s">
+      <div class="hero-photo-frame">
+        <img
+          src="https://avatars.githubusercontent.com/u/142075133?v=4"
+          alt="Muhammed Shehzad"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-left fade-in">
+        <img
+          src="https://avatars.githubusercontent.com/u/142075133?v=4"
+          alt="Muhammed Shehzad"
+          class="about-photo"
+        />
+        <div class="about-info">
+          <div><strong>Location</strong><br>Kozhikode, Kerala, India</div>
+          <br>
+          <div><strong>Email</strong><br><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6e1d060b06140f0a0d060b0d061b592e09030f0702400d0103">[email&#160;protected]</a></div>
+          <br>
+          <div><strong>Phone</strong><br>+91 80861 68455</div>
+          <br>
+          <div><strong>Availability</strong><br>Open to opportunities</div>
+        </div>
+      </div>
+      <div class="about-text fade-in" style="transition-delay:0.1s">
+        <p class="section-label">About</p>
+        <h2 class="section-title">Flutter developer with a passion for beautiful UIs</h2>
+        <div class="section-line"></div>
+        <p>
+          I'm an enthusiastic Flutter developer with 2+ years of hands-on experience building dynamic, cross-platform mobile applications. My work spans freelance projects and team collaborations — from donation management tools to full real estate platforms.
         </p>
-        <div class="hero-actions">
-          <a href="#projects" class="btn-primary">View Work</a>
-          <a href="#contact" class="btn-outline">Get in Touch</a>
-        </div>
-        <div class="hero-social">
-          <a href="https://github.com/muhammedshehzad" target="_blank">GitHub</a>
-          <div class="divider"></div>
-          <a href="https://www.linkedin.com/in/muhammed-shehzad-573094201/" target="_blank">LinkedIn</a>
-          <div class="divider"></div>
-          <a href="mailto:shehzadchechu7@gmail.com">Email</a>
-        </div>
-      </div>
-      <div class="hero-photo fade-in" style="transition-delay: 0.15s">
-        <div class="hero-photo-frame">
-          <img
-            src="https://media.licdn.com/dms/image/v2/D5603AQGSfgg1WcAxGw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1728123975181?e=1753315200&v=beta&t=yowgxfvkpj_WbNDzoogLYKFHRHHnCBSJMXvKDt9YQmg"
-            alt="Muhammed Shehzad" />
+        <p>
+          My approach is rooted in clean architecture, reusable components, and pixel-perfect UI implementation. I've worked with Firebase, Provider, REST APIs, and Figma-to-Flutter pipelines across Android, iOS, and web targets.
+        </p>
+        <p>
+          I enjoy the craft of writing code that's readable and maintainable — and I'm always pushing to improve. Currently based in Kozhikode and available for both remote and local opportunities.
+        </p>
+        <div class="about-tags">
+          <span class="tag">Cross-Platform</span>
+          <span class="tag">Firebase</span>
+          <span class="tag">Clean Architecture</span>
+          <span class="tag">UI / UX</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">State Management</span>
+          <span class="tag">Figma</span>
+          <span class="tag">Git</span>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <div class="section-inner">
-      <div class="about-grid">
-        <div class="about-left fade-in">
-          <img
-            src="https://media.licdn.com/dms/image/v2/D5603AQGSfgg1WcAxGw/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1728123975181?e=1753315200&v=beta&t=yowgxfvkpj_WbNDzoogLYKFHRHHnCBSJMXvKDt9YQmg"
-            alt="Muhammed Shehzad" class="about-photo" />
-          <div class="about-info">
-            <div><strong>Location</strong><br>Kozhikode, Kerala, India</div>
-            <br>
-            <div><strong>Email</strong><br>shehzadchechu7@gmail.com</div>
-            <br>
-            <div><strong>Phone</strong><br>+91 80861 68455</div>
-            <br>
-            <div><strong>Availability</strong><br>Open to opportunities</div>
-          </div>
-        </div>
-        <div class="about-text fade-in" style="transition-delay:0.1s">
-          <p class="section-label">About</p>
-          <h2 class="section-title">Flutter developer with a passion for beautiful UIs</h2>
-          <div class="section-line"></div>
-          <p>
-            I'm an enthusiastic Flutter developer with 2+ years of hands-on experience building dynamic, cross-platform
-            mobile applications. My work spans freelance projects and team collaborations — from donation management
-            tools to full real estate platforms.
-          </p>
-          <p>
-            My approach is rooted in clean architecture, reusable components, and pixel-perfect UI implementation. I've
-            worked with Firebase, Provider, REST APIs, and Figma-to-Flutter pipelines across Android, iOS, and web
-            targets.
-          </p>
-          <p>
-            I enjoy the craft of writing code that's readable and maintainable — and I'm always pushing to improve.
-            Currently based in Kozhikode and available for both remote and local opportunities.
-          </p>
-          <div class="about-tags">
-            <span class="tag">Cross-Platform</span>
-            <span class="tag">Firebase</span>
-            <span class="tag">Clean Architecture</span>
-            <span class="tag">UI / UX</span>
-            <span class="tag">REST APIs</span>
-            <span class="tag">State Management</span>
-            <span class="tag">Figma</span>
-            <span class="tag">Git</span>
-          </div>
-        </div>
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <p class="section-label fade-in">Skills</p>
+    <h2 class="section-title fade-in">What I work with</h2>
+    <div class="section-line fade-in"></div>
+
+    <div class="skills-grid fade-in" id="skills-grid">
+      <div class="skill-cell">
+        <div class="skill-name">Flutter</div>
+        <div class="skill-level">Expert · 95%</div>
+        <div class="skill-bar"><div class="skill-fill" data-w="95"></div></div>
+        <div class="skill-desc">Responsive cross-platform apps with clean architecture.</div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-name">Dart</div>
+        <div class="skill-level">Expert · 90%</div>
+        <div class="skill-bar"><div class="skill-fill" data-w="90"></div></div>
+        <div class="skill-desc">Efficient, scalable Dart with idiomatic patterns.</div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-name">Firebase</div>
+        <div class="skill-level">Advanced · 85%</div>
+        <div class="skill-bar"><div class="skill-fill" data-w="85"></div></div>
+        <div class="skill-desc">Auth, Firestore, real-time data and Cloud Functions.</div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-name">REST APIs</div>
+        <div class="skill-level">Expert · 90%</div>
+        <div class="skill-bar"><div class="skill-fill" data-w="90"></div></div>
+        <div class="skill-desc">Seamless integrations using Dio and HTTP packages.</div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-name">UI / UX</div>
+        <div class="skill-level">Advanced · 85%</div>
+        <div class="skill-bar"><div class="skill-fill" data-w="85"></div></div>
+        <div class="skill-desc">Pixel-perfect layouts, animations, and Figma handoff.</div>
+      </div>
+      <div class="skill-cell">
+        <div class="skill-name">State Management</div>
+        <div class="skill-level">Advanced · 80%</div>
+        <div class="skill-bar"><div class="skill-fill" data-w="80"></div></div>
+        <div class="skill-desc">Provider, clean separation of concerns.</div>
       </div>
     </div>
-  </section>
 
-  <!-- SKILLS -->
-  <section id="skills">
-    <div class="section-inner">
-      <p class="section-label fade-in">Skills</p>
-      <h2 class="section-title fade-in">What I work with</h2>
-      <div class="section-line fade-in"></div>
-
-      <div class="skills-grid fade-in" id="skills-grid">
-        <div class="skill-cell">
-          <div class="skill-name">Flutter</div>
-          <div class="skill-level">Expert · 95%</div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-w="95"></div>
-          </div>
-          <div class="skill-desc">Responsive cross-platform apps with clean architecture.</div>
-        </div>
-        <div class="skill-cell">
-          <div class="skill-name">Dart</div>
-          <div class="skill-level">Expert · 90%</div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-w="90"></div>
-          </div>
-          <div class="skill-desc">Efficient, scalable Dart with idiomatic patterns.</div>
-        </div>
-        <div class="skill-cell">
-          <div class="skill-name">Firebase</div>
-          <div class="skill-level">Advanced · 85%</div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-w="85"></div>
-          </div>
-          <div class="skill-desc">Auth, Firestore, real-time data and Cloud Functions.</div>
-        </div>
-        <div class="skill-cell">
-          <div class="skill-name">REST APIs</div>
-          <div class="skill-level">Expert · 90%</div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-w="90"></div>
-          </div>
-          <div class="skill-desc">Seamless integrations using Dio and HTTP packages.</div>
-        </div>
-        <div class="skill-cell">
-          <div class="skill-name">UI / UX</div>
-          <div class="skill-level">Advanced · 85%</div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-w="85"></div>
-          </div>
-          <div class="skill-desc">Pixel-perfect layouts, animations, and Figma handoff.</div>
-        </div>
-        <div class="skill-cell">
-          <div class="skill-name">State Management</div>
-          <div class="skill-level">Advanced · 80%</div>
-          <div class="skill-bar">
-            <div class="skill-fill" data-w="80"></div>
-          </div>
-          <div class="skill-desc">Provider, clean separation of concerns.</div>
-        </div>
-      </div>
-
-      <div class="tech-row fade-in">
-        <span class="tech-chip">Flutter</span>
-        <span class="tech-chip">Dart</span>
-        <span class="tech-chip">Firebase</span>
-        <span class="tech-chip">Provider</span>
-        <span class="tech-chip">Dio / HTTP</span>
-        <span class="tech-chip">Hive</span>
-        <span class="tech-chip">Isar</span>
-        <span class="tech-chip">Figma</span>
-        <span class="tech-chip">Git / GitHub</span>
-        <span class="tech-chip">VS Code</span>
-        <span class="tech-chip">Android Studio</span>
-      </div>
+    <div class="tech-row fade-in">
+      <span class="tech-chip">Flutter</span>
+      <span class="tech-chip">Dart</span>
+      <span class="tech-chip">Firebase</span>
+      <span class="tech-chip">Provider</span>
+      <span class="tech-chip">Dio / HTTP</span>
+      <span class="tech-chip">Hive</span>
+      <span class="tech-chip">Isar</span>
+      <span class="tech-chip">Figma</span>
+      <span class="tech-chip">Git / GitHub</span>
+      <span class="tech-chip">VS Code</span>
+      <span class="tech-chip">Android Studio</span>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- EXPERIENCE -->
-  <section id="experience">
-    <div class="section-inner">
-      <p class="section-label fade-in">Experience</p>
-      <h2 class="section-title fade-in">Work history</h2>
-      <div class="section-line fade-in"></div>
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-inner">
+    <p class="section-label fade-in">Experience</p>
+    <h2 class="section-title fade-in">Work history</h2>
+    <div class="section-line fade-in"></div>
 
-      <div class="exp-list">
+    <div class="exp-list">
         <div class="exp-item fade-in">
           <div class="exp-meta">
             <div class="period">Dec 2024 – Present</div>
@@ -1136,10 +763,7 @@
           <div>
             <h3 class="exp-role">Flutter Developer</h3>
             <div class="exp-company">Cybrosys Technologies — Kerala (On-site)</div>
-            <p class="exp-desc">
-              Building robust cross-platform mobile applications for Android and iOS. Focused on Odoo mobile extensions
-              and mission-critical business applications.
-            </p>
+            <p class="exp-desc">Building robust cross-platform mobile applications for Android and iOS. Focused on Odoo mobile extensions and mission-critical business applications.</p>
             <ul class="exp-bullets">
               <li>Developing high-performance iOS and Android apps using Flutter</li>
               <li>Integrating complex backends including Odoo RPC and Firebase</li>
@@ -1148,7 +772,6 @@
             </ul>
           </div>
         </div>
-
         <div class="exp-item fade-in">
           <div class="exp-meta">
             <div class="period">May 2024 – Dec 2024</div>
@@ -1157,10 +780,7 @@
           <div>
             <h3 class="exp-role">Junior Flutter Developer</h3>
             <div class="exp-company">Hously.AI — Poland (Remote)</div>
-            <p class="exp-desc">
-              Collaborated with a distributed team to build a real estate platform. Translated Figma designs into
-              functional, high-quality Android and web interfaces.
-            </p>
+            <p class="exp-desc">Collaborated with a distributed team to build a real estate platform. Translated Figma designs into functional, high-quality Android and web interfaces.</p>
             <ul class="exp-bullets">
               <li>Built responsive Android and web interfaces from Figma mockups</li>
               <li>Delivered 4+ commercial screens with cross-platform consistency</li>
@@ -1168,7 +788,6 @@
             </ul>
           </div>
         </div>
-
         <div class="exp-item fade-in">
           <div class="exp-meta">
             <div class="period">Feb 2024 – May 2024</div>
@@ -1177,19 +796,14 @@
           <div>
             <h3 class="exp-role">Freelance Developer</h3>
             <div class="exp-company">Masjid Donation App — Client Project</div>
-            <p class="exp-desc">
-              Designed and developed a Flutter mobile app for a client to manage and track monthly masjid donations.
-              Handled the full product lifecycle from Figma design to Firebase-backed deployment.
-            </p>
+            <p class="exp-desc">Designed and developed a Flutter mobile app for a client to manage and track monthly masjid donations. Handled the full product lifecycle from Figma design to Firebase-backed deployment.</p>
             <ul class="exp-bullets">
               <li>Designed the full UI independently using Figma</li>
               <li>Implemented real-time data storage and retrieval with Firebase</li>
               <li>Used Provider for state management and Git for version control</li>
-              <li>Built features for recording, tracking, and reporting donations</li>
             </ul>
           </div>
         </div>
-
         <div class="exp-item fade-in">
           <div class="exp-meta">
             <div class="period">Dec 2023 – Jan 2024</div>
@@ -1198,10 +812,7 @@
           <div>
             <h3 class="exp-role">Freelance Developer</h3>
             <div class="exp-company">Self-employed — Local Projects</div>
-            <p class="exp-desc">
-              Developed custom Flutter solutions for small businesses and individuals, focusing on Firebase backend
-              integration and practical utility apps.
-            </p>
+            <p class="exp-desc">Developed custom Flutter solutions for small businesses and individuals, focusing on Firebase backend integration and practical utility apps.</p>
             <ul class="exp-bullets">
               <li>Built a school management application for a local educational institution</li>
               <li>Managed full client communication and project requirements</li>
@@ -1213,281 +824,191 @@
   </section>
 
   <!-- PROJECTS -->
-  <section id="projects">
-    <div class="section-inner">
-      <p class="section-label fade-in">Projects</p>
-      <h2 class="section-title fade-in">Selected work</h2>
-      <div class="section-line fade-in"></div>
+<section id="projects">
+  <div class="section-inner">
+    <p class="section-label fade-in">Projects</p>
+    <h2 class="section-title fade-in">Selected work</h2>
+    <div class="section-line fade-in"></div>
 
-      <div class="projects-grid fade-in">
+    <div class="projects-grid fade-in">
         <div class="proj-card">
           <div class="proj-num">01</div>
           <h3 class="proj-title">Mobo Attendance</h3>
-          <p class="proj-desc">A comprehensive mobile extension for Odoo Attendance. Features real-time tracking,
-            biometric login, and pagination support for large datasets. Built with clean architecture and Provider.</p>
-          <div class="proj-stack">
-            <span class="proj-tag">Flutter</span>
-            <span class="proj-tag">Odoo RPC</span>
-            <span class="proj-tag">Local Auth</span>
-            <span class="proj-tag">Provider</span>
-          </div>
-          <a href="https://github.com/mobo-open-source/mobo_attendance.git" target="_blank" class="proj-link">
-            View on GitHub
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </a>
+          <p class="proj-desc">A comprehensive mobile extension for Odoo Attendance. Features real-time tracking, biometric login, and pagination support for large datasets.</p>
+          <div class="proj-stack"><span class="proj-tag">Flutter</span><span class="proj-tag">Odoo RPC</span><span class="proj-tag">Local Auth</span><span class="proj-tag">Provider</span></div>
+          <a href="https://github.com/mobo-open-source/mobo_attendance.git" target="_blank" class="proj-link">View on GitHub <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
-
         <div class="proj-card">
           <div class="proj-num">02</div>
           <h3 class="proj-title">Mobo Sales</h3>
-          <p class="proj-desc">Empowers sales teams with real-time Odoo Sales integration. Manage orders, customers, and
-            products on the go with a polished, high-performance mobile interface.</p>
-          <div class="proj-stack">
-            <span class="proj-tag">Flutter</span>
-            <span class="proj-tag">Odoo API</span>
-            <span class="proj-tag">Dart</span>
-            <span class="proj-tag">Clean Architecture</span>
-          </div>
-          <a href="https://github.com/mobo-open-source/mobo_sales.git" target="_blank" class="proj-link">
-            View on GitHub
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </a>
+          <p class="proj-desc">Empowers sales teams with real-time Odoo Sales integration. Manage orders, customers, and products on the go with a polished mobile interface.</p>
+          <div class="proj-stack"><span class="proj-tag">Flutter</span><span class="proj-tag">Odoo API</span><span class="proj-tag">Dart</span><span class="proj-tag">Clean Architecture</span></div>
+          <a href="https://github.com/mobo-open-source/mobo_sales.git" target="_blank" class="proj-link">View on GitHub <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
-
         <div class="proj-card">
           <div class="proj-num">03</div>
           <h3 class="proj-title">Mobo Billing</h3>
-          <p class="proj-desc">Simplified invoicing and billing for Odoo. Streamlines the document creation process and
-            ensures seamless synchronisation with the core Odoo ERP system.</p>
-          <div class="proj-stack">
-            <span class="proj-tag">Flutter</span>
-            <span class="proj-tag">Odoo RPC</span>
-            <span class="proj-tag">Provider</span>
-            <span class="proj-tag">Dart</span>
-          </div>
-          <a href="https://github.com/mobo-open-source/mobo_billing.git" target="_blank" class="proj-link">
-            View on GitHub
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </a>
+          <p class="proj-desc">Simplified invoicing and billing for Odoo. Streamlines document creation and ensures seamless synchronisation with the core Odoo ERP system.</p>
+          <div class="proj-stack"><span class="proj-tag">Flutter</span><span class="proj-tag">Odoo RPC</span><span class="proj-tag">Provider</span><span class="proj-tag">Dart</span></div>
+          <a href="https://github.com/mobo-open-source/mobo_billing.git" target="_blank" class="proj-link">View on GitHub <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
-
         <div class="proj-card">
           <div class="proj-num">04</div>
           <h3 class="proj-title">Mobo Expenses</h3>
-          <p class="proj-desc">Expense tracking made easy. Capture receipts and submit expense reports directly to Odoo
-            from your mobile device, reducing friction for employees on the move.</p>
-          <div class="proj-stack">
-            <span class="proj-tag">Flutter</span>
-            <span class="proj-tag">Odoo API</span>
-            <span class="proj-tag">Firebase</span>
-            <span class="proj-tag">Provider</span>
-          </div>
-          <a href="https://github.com/mobo-open-source/mobo_expenses.git" target="_blank" class="proj-link">
-            View on GitHub
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </a>
+          <p class="proj-desc">Expense tracking made easy. Capture receipts and submit expense reports directly to Odoo from your mobile device.</p>
+          <div class="proj-stack"><span class="proj-tag">Flutter</span><span class="proj-tag">Odoo API</span><span class="proj-tag">Firebase</span><span class="proj-tag">Provider</span></div>
+          <a href="https://github.com/mobo-open-source/mobo_expenses.git" target="_blank" class="proj-link">View on GitHub <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
-
         <div class="proj-card">
           <div class="proj-num">05</div>
           <h3 class="proj-title">Mobo POS</h3>
-          <p class="proj-desc">A mobile Point of Sale solution for Odoo. Optimized for speed and reliability in retail
-            environments, supporting offline operations and real-time sync.</p>
-          <div class="proj-stack">
-            <span class="proj-tag">Flutter</span>
-            <span class="proj-tag">Odoo RPC</span>
-            <span class="proj-tag">Hive</span>
-            <span class="proj-tag">Provider</span>
-          </div>
-          <a href="https://github.com/mobo-open-source/mobo_pos.git" target="_blank" class="proj-link">
-            View on GitHub
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </a>
+          <p class="proj-desc">A mobile Point of Sale solution for Odoo. Optimized for speed and reliability in retail environments, supporting offline operations and real-time sync.</p>
+          <div class="proj-stack"><span class="proj-tag">Flutter</span><span class="proj-tag">Odoo RPC</span><span class="proj-tag">Hive</span><span class="proj-tag">Provider</span></div>
+          <a href="https://github.com/mobo-open-source/mobo_pos.git" target="_blank" class="proj-link">View on GitHub <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
-
         <div class="proj-card">
           <div class="proj-num">06</div>
           <h3 class="proj-title">Mobo Inventory</h3>
-          <p class="proj-desc">Efficient warehouse management for Odoo. Handle stock transfers, internal moves, and
-            inventory audits using a mobile-first interface with barcode support.</p>
-          <div class="proj-stack">
-            <span class="proj-tag">Flutter</span>
-            <span class="proj-tag">Odoo API</span>
-            <span class="proj-tag">Scanner SDK</span>
-            <span class="proj-tag">Dart</span>
-          </div>
-          <a href="https://github.com/mobo-open-source/mobo_inventory.git" target="_blank" class="proj-link">
-            View on GitHub
-            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
-              <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </a>
+          <p class="proj-desc">Efficient warehouse management for Odoo. Handle stock transfers, internal moves, and inventory audits with a mobile-first interface and barcode support.</p>
+          <div class="proj-stack"><span class="proj-tag">Flutter</span><span class="proj-tag">Odoo API</span><span class="proj-tag">Scanner SDK</span><span class="proj-tag">Dart</span></div>
+          <a href="https://github.com/mobo-open-source/mobo_inventory.git" target="_blank" class="proj-link">View on GitHub <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         </div>
       </div>
     </div>
   </section>
 
   <!-- CONTACT -->
-  <section id="contact">
-    <div class="section-inner">
-      <p class="section-label fade-in">Contact</p>
-      <h2 class="section-title fade-in">Let's work together</h2>
-      <div class="section-line fade-in"></div>
+<section id="contact">
+  <div class="section-inner">
+    <p class="section-label fade-in">Contact</p>
+    <h2 class="section-title fade-in">Let's work together</h2>
+    <div class="section-line fade-in"></div>
 
-      <div class="contact-grid">
-        <div class="fade-in">
-          <p class="contact-intro">
-            Have a project in mind or want to discuss an opportunity? I'm open to freelance work, full-time roles, and
-            interesting collaborations. Don't hesitate to reach out.
-          </p>
-          <div class="contact-info">
-            <div class="contact-row">
-              <span class="contact-row-label">Email</span>
-              <a href="mailto:shehzadchechu7@gmail.com">shehzadchechu7@gmail.com</a>
-            </div>
-            <div class="contact-row">
-              <span class="contact-row-label">Phone</span>
-              <a href="tel:+918086168455">+91 80861 68455</a>
-            </div>
-            <div class="contact-row">
-              <span class="contact-row-label">Location</span>
-              <span>Kozhikode, Kerala, India</span>
-            </div>
-            <div class="contact-row">
-              <span class="contact-row-label">GitHub</span>
-              <a href="https://github.com/muhammedshehzad" target="_blank">github.com/muhammedshehzad</a>
-            </div>
-            <div class="contact-row">
-              <span class="contact-row-label">LinkedIn</span>
-              <a href="https://www.linkedin.com/in/muhammed-shehzad-573094201/"
-                target="_blank">linkedin.com/in/muhammed-shehzad</a>
-            </div>
+    <div class="contact-grid">
+      <div class="fade-in">
+        <p class="contact-intro">
+          Have a project in mind or want to discuss an opportunity? I'm open to freelance work, full-time roles, and interesting collaborations. Don't hesitate to reach out.
+        </p>
+        <div class="contact-info">
+          <div class="contact-row">
+            <span class="contact-row-label">Email</span>
+            <a href="/cdn-cgi/l/email-protection#1d6e757875677c797e75787e75682a5d7a707c7471337e7270"><span class="__cf_email__" data-cfemail="592a313c3123383d3a313c3a312c6e193e34383035773a3634">[email&#160;protected]</span></a>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row-label">Phone</span>
+            <a href="tel:+918086168455">+91 80861 68455</a>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row-label">Location</span>
+            <span>Kozhikode, Kerala, India</span>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row-label">GitHub</span>
+            <a href="https://github.com/muhammedshehzad" target="_blank">github.com/muhammedshehzad</a>
+          </div>
+          <div class="contact-row">
+            <span class="contact-row-label">LinkedIn</span>
+            <a href="https://www.linkedin.com/in/muhammed-shehzad-573094201/" target="_blank">linkedin.com/in/muhammed-shehzad</a>
           </div>
         </div>
+      </div>
 
-        <div class="fade-in" style="transition-delay:0.1s">
-          <form id="contact-form">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" placeholder="Your name" required />
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="your@email.com" required />
-            </div>
-            <div class="form-group">
-              <label for="subject">Subject</label>
-              <input type="text" id="subject" name="subject" placeholder="What's it about?" required />
-            </div>
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project…"
-                required></textarea>
-            </div>
-            <button type="submit" class="btn-send" id="send-btn">Send Message</button>
-          </form>
-        </div>
+      <div class="fade-in" style="transition-delay:0.1s">
+        <form id="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="What's it about?" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Tell me about your project…" required></textarea>
+          </div>
+          <button type="submit" class="btn-send" id="send-btn">Send Message</button>
+        </form>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-inner">
-      <span class="footer-copy">© 2025 Muhammed Shehzad. All rights reserved.</span>
-      <div class="footer-links">
-        <a href="https://github.com/muhammedshehzad" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/muhammed-shehzad-573094201/" target="_blank">LinkedIn</a>
-        <a href="https://www.instagram.com/shehzaa.d/" target="_blank">Instagram</a>
-      </div>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <span class="footer-copy">© 2025 Muhammed Shehzad. All rights reserved.</span>
+    <div class="footer-links">
+      <a href="https://github.com/muhammedshehzad" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/muhammed-shehzad-573094201/" target="_blank">LinkedIn</a>
+      <a href="https://www.instagram.com/shehzaa.d/" target="_blank">Instagram</a>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <!-- BACK TO TOP -->
-  <a href="#home" id="btt" aria-label="Back to top">
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <path d="M8 12V4M8 4L4 8M8 4L12 8" stroke="white" stroke-width="1.5" stroke-linecap="round"
-        stroke-linejoin="round" />
-    </svg>
-  </a>
+<!-- BACK TO TOP -->
+<a href="#home" id="btt" aria-label="Back to top">
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+    <path d="M8 12V4M8 4L4 8M8 4L12 8" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </svg>
+</a>
 
-  <script>
-    // ── Mobile menu
-    const ham = document.getElementById('ham');
-    const mob = document.getElementById('mobile-menu');
-    ham.addEventListener('click', () => {
-      mob.classList.toggle('open');
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // ── Mobile menu
+  const ham = document.getElementById('ham');
+  const mob = document.getElementById('mobile-menu');
+  ham.addEventListener('click', () => {
+    mob.classList.toggle('open');
+  });
+  mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+
+  // ── Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
-    mob.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mob.classList.remove('open')));
+  });
 
-    // ── Smooth scroll
-    document.querySelectorAll('a[href^="#"]').forEach(a => {
-      a.addEventListener('click', e => {
-        const t = document.querySelector(a.getAttribute('href'));
-        if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-      });
+  // ── Fade-in observer
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('visible'); obs.unobserve(en.target); }});
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+  // Trigger hero immediately
+  document.querySelectorAll('#home .fade-in').forEach(el => el.classList.add('visible'));
+
+  // ── Skill bars
+  const barObs = new IntersectionObserver(entries => {
+    entries.forEach(en => {
+      if (en.isIntersecting) {
+        en.target.querySelectorAll('.skill-fill').forEach(f => {
+          f.style.width = f.dataset.w + '%';
+        });
+        barObs.unobserve(en.target);
+      }
     });
+  }, { threshold: 0.2 });
+  const sg = document.getElementById('skills-grid');
+  if (sg) barObs.observe(sg);
 
-    // ── Fade-in observer
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('visible'); obs.unobserve(en.target); } });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+  // ── Back to top
+  const btt = document.getElementById('btt');
+  window.addEventListener('scroll', () => {
+    btt.classList.toggle('visible', window.scrollY > 400);
+  });
 
-    // Trigger hero immediately
-    document.querySelectorAll('#home .fade-in').forEach(el => el.classList.add('visible'));
-
-    // ── Skill bars
-    const barObs = new IntersectionObserver(entries => {
-      entries.forEach(en => {
-        if (en.isIntersecting) {
-          en.target.querySelectorAll('.skill-fill').forEach(f => {
-            f.style.width = f.dataset.w + '%';
-          });
-          barObs.unobserve(en.target);
-        }
-      });
-    }, { threshold: 0.2 });
-    const sg = document.getElementById('skills-grid');
-    if (sg) barObs.observe(sg);
-
-    // ── Back to top
-    const btt = document.getElementById('btt');
-    window.addEventListener('scroll', () => {
-      btt.classList.toggle('visible', window.scrollY > 400);
-    });
-
-    // ── Contact form (simple mailto fallback)
-    document.getElementById('contact-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      const btn = document.getElementById('send-btn');
-      btn.textContent = 'Sent ✓';
-      btn.style.opacity = '0.6';
-      btn.disabled = true;
-      // Open mailto as fallback
-      const name = this.name.value;
-      const subj = encodeURIComponent(this.subject.value);
-      const body = encodeURIComponent(`Hi Shehzad,\n\n${this.message.value}\n\n— ${name}`);
-      window.location.href = `mailto:shehzadchechu7@gmail.com?subject=${subj}&body=${body}`;
-      setTimeout(() => { btn.textContent = 'Send Message'; btn.style.opacity = '1'; btn.disabled = false; this.reset(); }, 3000);
-    });
-  </script>
-</body>
-
-</html>
+  // ── Contact form (simple mailto fallback)
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = document.getElementById('send-btn');
+    btn.textContent = 'Sent ✓';
+    btn.style.opacity = '0.6';
+    btn.disabled = true;
+    // Open mailto as fallback
+    con
